@@ -11,8 +11,4 @@ void draw(){
   clear();
   currentBlock.display();
   currentBlock.fall();
-  //timer.setInterval(() -> {
-  //  currentBlock.display();
-  //  currentBlock.fall();
-  //}, 1000);
 }

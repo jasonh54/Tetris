@@ -1,5 +1,6 @@
 class iBlock extends Block {
   
+  //constructor
   public iBlock() {
     super();
     p1.x = this.x;
