@@ -1,10 +1,18 @@
 ArrayList<Piece> pieces = new ArrayList<Piece>();
-Block currentBlock;
+Block currentBlock = new Block();
+Timer timer = new Timer();
 
 void setup(){
+  size(500, 500);
   
 }
 
 void draw(){
-  
+  clear();
+  currentBlock.display();
+  currentBlock.fall();
+  //timer.setInterval(() -> {
+  //  currentBlock.display();
+  //  currentBlock.fall();
+  //}, 1000);
 }
