@@ -10,9 +10,10 @@ void setup(){
 void draw(){
   clear();
   currentBlock.display();
-  currentBlock.fall();
-  //timer.setInterval(() -> {
-  //  currentBlock.display();
-  //  currentBlock.fall();
-  //}, 1000);
+  
+  timer.setInterval(new Runnable() {
+    public void run(){
+      currentBlock.fall();
+    }
+  }, 1000);
 }
