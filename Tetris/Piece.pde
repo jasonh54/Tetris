@@ -19,6 +19,7 @@ class Piece {
   
   //draw the piece
   public void display() {
+    fill(255);
     rect(x, y, 20, 20);
   }
   
