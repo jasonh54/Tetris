@@ -1,39 +1,39 @@
-class iBlock extends Block {
+class sBlock extends Block {
   
   //constructor
-  public iBlock() {
+  public sBlock() {
     super();
-    p1.x = this.x;
-    p1.y = this.y - 20;
+    p1.x = this.x + 20;
+    p1.y = this.y;
     p2.x = this.x;
     p2.y = this.y;
     p3.x = this.x;
     p3.y = this.y + 20;
-    p4.x = this.x;
-    p4.y = this.y + 40;
+    p4.x = this.x - 20;
+    p4.y = this.y + 20;
   }
   
   public void setRotation() {
     switch(this.rotation % 2) {
       case 0:
-        p1.x = this.x;
-        p1.y = this.y - 20;
+        p1.x = this.x + 20;
+        p1.y = this.y;
         p2.x = this.x;
         p2.y = this.y;
         p3.x = this.x;
         p3.y = this.y + 20;
-        p4.x = this.x;
-        p4.y = this.y + 40;
+        p4.x = this.x - 20;
+        p4.y = this.y + 20;
         break;
       case 1:
-        p1.x = this.x - 20;
+        p1.x = this.x + 20;
         p1.y = this.y;
         p2.x = this.x;
         p2.y = this.y;
-        p3.x = this.x + 20;
-        p3.y = this.y;
-        p4.x = this.x + 40;
-        p4.y = this.y;
+        p3.x = this.x;
+        p3.y = this.y - 20;
+        p4.x = this.x + 20;
+        p4.y = this.y + 20;
         break;
     }
   }

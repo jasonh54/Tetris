@@ -1,5 +1,5 @@
 ArrayList<Piece> pieces = new ArrayList<Piece>();
-Block currentBlock = new Block();
+Block currentBlock = new sBlock();
 Timer timer = new Timer();
 
 void setup(){
@@ -9,15 +9,23 @@ void setup(){
 
 void draw(){
   clear();
-  currentBlock.display();
-<<<<<<< HEAD
-  currentBlock.fall();
-=======
-  
+  currentBlock.update();
   timer.setInterval(new Runnable() {
     public void run(){
       currentBlock.fall();
     }
   }, 1000);
->>>>>>> 9f1c33e30c4f7b754ff039fa60f30654c00e0cab
+}
+
+void keyPressed() {
+  if (key == 'a') {
+    currentBlock.shiftLeft();
+  } else if (key == 'd') {
+    currentBlock.shiftRight();
+  }
+  if (key == 'j') {
+    currentBlock.subtractRotation();
+  } else if (key == 'l') {
+    currentBlock.addRotation();
+  }
 }
