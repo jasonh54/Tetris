@@ -1,6 +1,8 @@
 class Timer {
+  //local vars initialized
   int timestamp;
   
+  //constructor
   public Timer() {
     timestamp = 0;
   }
