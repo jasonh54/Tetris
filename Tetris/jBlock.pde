@@ -1,33 +1,33 @@
-class lBlock extends Block {
+class jBlock extends Block {
   
   //constructor
-  public lBlock() {
+  public jBlock() {
     super();
-    p1.x = this.x + 20;
-    p1.y = this.y;
+    p1.x = this.x;
+    p1.y = this.y - 20;
     p2.x = this.x;
     p2.y = this.y;
     p3.x = this.x;
-    p3.y = this.y - 20;
-    p4.x = this.x;
-    p4.y = this.y - 40;
+    p3.y = this.y + 20;
+    p4.x = this.x - 20;
+    p4.y = this.y + 20;
   }
   
   public void setRotation() {
     switch(this.rotation % 4) {
       case 0:
-        p1.x = this.x + 20;
-        p1.y = this.y;
+        p1.x = this.x;
+        p1.y = this.y - 40;
         p2.x = this.x;
         p2.y = this.y;
         p3.x = this.x;
         p3.y = this.y - 20;
-        p4.x = this.x;
-        p4.y = this.y - 40;
+        p4.x = this.x - 20;
+        p4.y = this.y;
         break;
       case 1:
         p1.x = this.x;
-        p1.y = this.y + 20;
+        p1.y = this.y - 20;
         p2.x = this.x;
         p2.y = this.y;
         p3.x = this.x + 20;
@@ -36,7 +36,7 @@ class lBlock extends Block {
         p4.y = this.y;
         break;
       case 2:
-        p1.x = this.x - 20;
+        p1.x = this.x + 20;
         p1.y = this.y;
         p2.x = this.x;
         p2.y = this.y;
@@ -47,7 +47,7 @@ class lBlock extends Block {
         break;
       case 3:
         p1.x = this.x;
-        p1.y = this.y - 20;
+        p1.y = this.y + 20;
         p2.x = this.x;
         p2.y = this.y;
         p3.x = this.x - 20;

@@ -1,5 +1,5 @@
 ArrayList<Piece> pieces = new ArrayList<Piece>();
-Block currentBlock = new sBlock();
+Block currentBlock = new lBlock();
 Timer timer = new Timer();
 
 void setup(){
