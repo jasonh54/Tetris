@@ -5,12 +5,15 @@
 
 class Block{
   
+  //
   Piece p1, p2, p3, p4;
   
+  //constructor
   public Block(){
     
   }
   
+  //make block fall down
   public void fall(){
     
   }
