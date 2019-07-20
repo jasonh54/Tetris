@@ -3,6 +3,7 @@ class Piece {
   int x;
   int y;
   boolean falltag;
+  int c;
   
   //constructor
   public Piece(int x, int y) {
@@ -19,7 +20,7 @@ class Piece {
   
   //draw the piece
   public void display() {
-    fill(255);
+    fill(c);
     rect(x, y, 20, 20);
   }
 }
