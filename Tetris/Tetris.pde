@@ -15,6 +15,11 @@ void draw(){
       currentBlock.fall();
     }
   }, 1000);
+  if(currentBlock.checkCollision()){
+     currentBlock = new iBlock(); 
+  }
+  displayAll();
+  
 }
 
 void keyPressed() {
@@ -28,4 +33,14 @@ void keyPressed() {
   } else if (key == 'l') {
     currentBlock.addRotation();
   }
+  if (key == 's'){
+     currentBlock.y += 20; 
+  }
+}
+
+void displayAll(){
+  println(pieces.size());
+   for(int i = 0; i < pieces.size(); i++){
+      pieces.get(i).display(); 
+   }
 }
