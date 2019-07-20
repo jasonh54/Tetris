@@ -1,11 +1,8 @@
-<<<<<<< HEAD
-//block class
-//requires 4 pieces p1, p2, p3, p4
-//fall function that will make it move down on the y axis by the size of the piece
-//update()
-
-class Block{
-  
+class Block {
+  //local vars initialized
+  int x;
+  int y;
+  int rotation;
   Piece p1, p2, p3, p4;
   
   //constructor
@@ -19,9 +16,6 @@ class Block{
     p4 = new Piece(x + 40, y);
   }
   
-  //make block fall down
-  //cause the pieces to fall down by their height
-
   public void fall(){
     this.y += 20;
   }
