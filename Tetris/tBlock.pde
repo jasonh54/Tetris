@@ -11,6 +11,10 @@ class tBlock extends Block {
     p3.y = this.y;
     p4.x = this.x;
     p4.y = this.y + 20;
+    p1.c = #993299;
+    p2.c = #993299;
+    p3.c = #993299;
+    p4.c = #993299;
   }
   
   public void setRotation() {

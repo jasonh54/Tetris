@@ -11,6 +11,10 @@ class sBlock extends Block {
     p3.y = this.y + 20;
     p4.x = this.x - 20;
     p4.y = this.y + 20;
+    p1.c = #2fec04;
+    p2.c = #2fec04;
+    p3.c = #2fec04;
+    p4.c = #2fec04;
   }
   
   public void setRotation() {

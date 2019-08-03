@@ -11,6 +11,10 @@ class iBlock extends Block {
     p3.y = this.y + 20;
     p4.x = this.x;
     p4.y = this.y + 40;
+    p1.c = #00e5e5;
+    p2.c = #00e5e5;
+    p3.c = #00e5e5;
+    p4.c = #00e5e5;
   }
   
   public void setRotation() {

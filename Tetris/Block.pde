@@ -34,11 +34,11 @@ class Block {
   }
   
   public void shiftLeft() {
-    this.x -= 20;
+      this.x -= 20;
   }
   
   public void shiftRight() {
-    this.x += 20;
+      this.x += 20;
   }
   
   public boolean checkCollision(){

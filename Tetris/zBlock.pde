@@ -11,6 +11,10 @@ class zBlock extends Block {
     p3.y = this.y + 20;
     p4.x = this.x + 20;
     p4.y = this.y + 20;
+    p1.c = #FF1919;
+    p2.c = #FF1919;
+    p3.c = #FF1919;
+    p4.c = #FF1919;
   }
   
   public void setRotation() {
