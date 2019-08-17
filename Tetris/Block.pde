@@ -28,13 +28,17 @@ class Block {
   }
   
   public void revertRotation() {
+    setRotation();
     for(int i = 0; i < pieces.size() - 4; i++) {
       if((p1.y == pieces.get(i).y && p1.x == pieces.get(i).x) || (p2.y == pieces.get(i).y && p2.x == pieces.get(i).x) || 
       (p3.y == pieces.get(i).y && p3.x == pieces.get(i).x) || (p4.y == pieces.get(i).y && p4.x == pieces.get(i).x)){
+        print("rotated into a block");
         if (leftright == 1) {
           rotation--;
+          setRotation();
         } else if (leftright == 2) {
           rotation++;
+          setRotation();
         }
       } 
     }
@@ -43,11 +47,13 @@ class Block {
   public void addRotation() {
     leftright = 1;
     rotation++;
+    revertRotation();
   }
   
   public void subtractRotation() {
     leftright = 2;
     rotation--;
+    revertRotation();
   }
   
   public void shiftLeft() {
@@ -124,5 +130,8 @@ class Block {
   
   public void update() {
     
+  }
+  
+  public void setRotation(){
   }
 }
