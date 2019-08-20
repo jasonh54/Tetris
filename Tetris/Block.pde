@@ -9,8 +9,8 @@ class Block {
   
   //constructor
   public Block(){
-    this.x = 250;
-    this.y = 0;
+    this.x = 300;
+    this.y = 100;
     this.rotation = 0;
     p1 = new Piece(x - 20, y);
     p2 = new Piece(x, y);
@@ -29,7 +29,7 @@ class Block {
   
   public void revertRotation() {
     setRotation();
-    for(int i = 0; i < pieces.size() - 4; i++) {
+    for(int i = 0; i < pieces.size() - 8; i++) {
       if((p1.y == pieces.get(i).y && p1.x == pieces.get(i).x) || (p2.y == pieces.get(i).y && p2.x == pieces.get(i).x) || 
       (p3.y == pieces.get(i).y && p3.x == pieces.get(i).x) || (p4.y == pieces.get(i).y && p4.x == pieces.get(i).x)){
         print("rotated into a block");
@@ -57,13 +57,13 @@ class Block {
   }
   
   public void shiftLeft() {
-    if (p1.x > 20 && p2.x > 20 && p3.x > 20 && p4.x > 20 && !checkCollisionLeft()) {
+    if (p1.x > 0 && p2.x > 0 && p3.x > 0 && p4.x > 0 && !checkCollisionLeft()) {
       x -= 20;
     }
   }
   
   public void shiftRight() {
-    if (p1.x < 460 && p2.x < 460 && p3.x < 460 && p4.x < 460 && !checkCollisionRight()) {
+    if (p1.x < 180 && p2.x < 180 && p3.x < 180 && p4.x < 180 && !checkCollisionRight()) {
       x += 20;
     }
     
@@ -71,7 +71,7 @@ class Block {
   
   public boolean checkCollisionDown(){
     //revertRotation();
-    for(int i = 0; i < pieces.size() - 4; i++){
+    for(int i = 0; i < pieces.size() - 8; i++){
       if((p1.y + 20 == pieces.get(i).y && p1.x == pieces.get(i).x) || (p2.y + 20 == pieces.get(i).y && p2.x == pieces.get(i).x) || 
       (p3.y + 20 == pieces.get(i).y && p3.x == pieces.get(i).x) || (p4.y + 20 == pieces.get(i).y && p4.x == pieces.get(i).x)){
         return true;
@@ -86,7 +86,7 @@ class Block {
   }
   
   public boolean checkCollisionLeft(){
-    for(int i = 0; i < pieces.size() - 4; i++){
+    for(int i = 0; i < pieces.size() - 8; i++){
       if((p1.x - 20 == pieces.get(i).x && p1.y == pieces.get(i).y) || (p2.x - 20 == pieces.get(i).x && p2.y == pieces.get(i).y) || 
       (p3.x - 20 == pieces.get(i).x && p3.y == pieces.get(i).y) || (p4.x - 20 == pieces.get(i).x && p4.y == pieces.get(i).y)){
         return true;
@@ -97,7 +97,7 @@ class Block {
   }
   
   public boolean checkCollisionRight(){
-    for(int i = 0; i < pieces.size() - 4; i++){
+    for(int i = 0; i < pieces.size() - 8; i++){
       if((p1.x + 20 == pieces.get(i).x && p1.y == pieces.get(i).y) || (p2.x + 20 == pieces.get(i).x && p2.y == pieces.get(i).y) || 
       (p3.x + 20 == pieces.get(i).x && p3.y == pieces.get(i).y) || (p4.x + 20 == pieces.get(i).x && p4.y == pieces.get(i).y)){
         return true;
@@ -113,7 +113,7 @@ class Block {
       x += 20;
     }
     //right
-    if (p1.x > 480 || p2.x > 480 || p3.x > 480 || p4.x > 480) {
+    if (p1.x > 180 || p2.x > 180 || p3.x > 180 || p4.x > 180) {
       x -= 20;
     }
   }
