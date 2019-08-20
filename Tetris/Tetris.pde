@@ -1,14 +1,22 @@
 ArrayList<Piece> pieces = new ArrayList<Piece>();
 Block currentBlock;
+Block nextCurrentBlock;
 Timer timer = new Timer();
 
 void setup(){
-  size(500, 500);
+  size(400, 500);
+  pickBlock();
+  currentBlock = nextCurrentBlock;
+  currentBlock.x = 100;
   pickBlock();
 }
 
 void draw(){
   clear();
+  stroke(255);
+  line(200,0,200,500);
+  line(0,100,200,100);
+  stroke(0);
   currentBlock.update();
   timer.setInterval(new Runnable() {
     public void run(){
@@ -16,7 +24,9 @@ void draw(){
     }
   }, 1000);
   if(currentBlock.checkCollisionDown()){
-     pickBlock();
+    currentBlock = nextCurrentBlock;
+    currentBlock.x = 100;
+    pickBlock();
   }
   displayAll();
   
@@ -48,25 +58,25 @@ void pickBlock() {
   int blocktype = (int) random(7);
   switch (blocktype) {
     case 0:
-      currentBlock = new iBlock();
+      nextCurrentBlock = new iBlock();
       break;
     case 1:
-      currentBlock = new jBlock();
+      nextCurrentBlock = new jBlock();
       break;
     case 2:
-      currentBlock = new lBlock();
+      nextCurrentBlock = new lBlock();
       break;
     case 3:
-      currentBlock = new oBlock();
+      nextCurrentBlock = new oBlock();
       break;
     case 4:
-      currentBlock = new sBlock();
+      nextCurrentBlock = new sBlock();
       break;
     case 5:
-      currentBlock = new zBlock();
+      nextCurrentBlock = new zBlock();
       break;
     case 6:
-      currentBlock = new tBlock();
+      nextCurrentBlock = new tBlock();
       break;
     default:
       print("error: blocktype picked number not tied to a block");
