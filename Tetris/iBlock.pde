@@ -14,6 +14,7 @@ class iBlock extends Block {
   }
   
   public void setRotation() {
+
     switch(this.rotation % 2) {
       case 0:
         p1.x = this.x;
@@ -43,6 +44,7 @@ class iBlock extends Block {
       rotation = 1;
     }
     setRotation();
+    
     this.display();
   }
   
