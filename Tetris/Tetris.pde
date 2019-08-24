@@ -1,15 +1,22 @@
 ArrayList<Piece> pieces = new ArrayList<Piece>();
 Block currentBlock;
-int nextBlock; // debugging
+Block nextCurrentBlock;
 Timer timer = new Timer();
 
 void setup(){
-  size(500, 500);
+  size(400, 500);
+  pickBlock();
+  currentBlock = nextCurrentBlock;
+  currentBlock.x = 100;
   pickBlock();
 }
 
 void draw(){
   clear();
+  stroke(255);
+  line(200,0,200,500);
+  line(0,100,200,100);
+  stroke(0);
   currentBlock.update();
   timer.setInterval(new Runnable() {
     public void run(){
@@ -17,8 +24,10 @@ void draw(){
     }
   }, 1000);
   if(currentBlock.checkCollisionDown()){
-     clearLine(currentBlock.p1, currentBlock.p2, currentBlock.p3, currentBlock.p4);
-     pickBlock();
+    //clearLine(currentBlock.p1, currentBlock.p2, currentBlock.p3, currentBlock.p4);
+    currentBlock = nextCurrentBlock;
+    currentBlock.x = 100;
+    pickBlock();
   }
   for(int i = 0; i < pieces.size(); i++){
      //System.out.print(pieces.get(i).y + " "); 
@@ -46,11 +55,6 @@ void keyPressed() {
 
   }
   
-  //debugging
-  if (key == 'p'){
-     nextBlock = 0; 
-     System.out.println("Next block will be I Block");
-  }
 }
 
 void displayAll(){
@@ -64,25 +68,25 @@ void pickBlock() {
   
   switch (blocktype) {
     case 0:
-      currentBlock = new iBlock();
+      nextCurrentBlock = new iBlock();
       break;
     case 1:
-      currentBlock = new jBlock();
+      nextCurrentBlock = new jBlock();
       break;
     case 2:
-      currentBlock = new lBlock();
+      nextCurrentBlock = new lBlock();
       break;
     case 3:
-      currentBlock = new oBlock();
+      nextCurrentBlock = new oBlock();
       break;
     case 4:
-      currentBlock = new sBlock();
+      nextCurrentBlock = new sBlock();
       break;
     case 5:
-      currentBlock = new zBlock();
+      nextCurrentBlock = new zBlock();
       break;
     case 6:
-      currentBlock = new tBlock();
+      nextCurrentBlock = new tBlock();
       break;
     default:
       print("error: blocktype picked number not tied to a block");
