@@ -3,6 +3,7 @@ class Block {
   int x;
   int y;
   int rotation;
+  int blocktag;
   int leftright = 0;
   
   Piece p1, p2, p3, p4;
@@ -11,6 +12,7 @@ class Block {
   public Block(){
     this.x = 300;
     this.y = 100;
+    this.blocktag = 
     this.rotation = 0;
     p1 = new Piece(x - 20, y);
     p2 = new Piece(x, y);

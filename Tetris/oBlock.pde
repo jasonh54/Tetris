@@ -11,6 +11,7 @@ class oBlock extends Block {
     p3.y = this.y + 20;
     p4.x = this.x;
     p4.y = this.y + 20;
+    this.blocktag = 3;
   }
   
   public void setRotation() {
@@ -29,9 +30,6 @@ class oBlock extends Block {
   }
   
   public void update() {
-    if (rotation < 0) {
-      rotation = 0;
-    }
     setRotation();
     this.display();
   }
