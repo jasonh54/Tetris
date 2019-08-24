@@ -10,6 +10,7 @@ class Piece {
     this.x = x;
     this.y = y;
     falltag = false;
+    c = #ffffff;
   }
   
   //set x and y coordinates
