@@ -11,9 +11,13 @@ class zBlock extends Block {
     p3.y = this.y + 20;
     p4.x = this.x + 20;
     p4.y = this.y + 20;
+    this.blocktag = 5;
   }
   
   public void setRotation() {
+    if (rotation < 0) {
+      rotation = 1;
+    }
     switch(this.rotation % 2) {
       case 0:
         p1.x = this.x - 20;
@@ -39,9 +43,6 @@ class zBlock extends Block {
   }
   
   public void update() {
-    if (rotation < 0) {
-      rotation = 1;
-    }
     setRotation();
     this.display();
   }
