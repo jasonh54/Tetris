@@ -15,9 +15,13 @@ class sBlock extends Block {
     p2.c = #2fec04;
     p3.c = #2fec04;
     p4.c = #2fec04;
+    this.blocktag = 4;
   }
   
   public void setRotation() {
+    if (rotation < 0) {
+      rotation = 1;
+    }
     switch(this.rotation % 2) {
       case 0:
         p1.x = this.x + 20;
@@ -43,9 +47,6 @@ class sBlock extends Block {
   }
   
   public void update() {
-    if (rotation < 0) {
-      rotation = 1;
-    }
     setRotation();
     this.display();
   }

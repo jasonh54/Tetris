@@ -1,4 +1,6 @@
 ArrayList<Piece> pieces = new ArrayList<Piece>();
+int prevBlock;
+int blocktype;
 Block currentBlock;
 Block nextCurrentBlock;
 Timer timer = new Timer();
@@ -8,6 +10,8 @@ void setup(){
   pickBlock();
   currentBlock = nextCurrentBlock;
   currentBlock.x = 100;
+  blocktype = 0;
+  prevBlock = 7;
   pickBlock();
 }
 
@@ -23,10 +27,12 @@ void draw(){
       currentBlock.fall();
     }
   }, 1000);
+
   if(currentBlock.checkCollisionDown()){
     clearLine();
     currentBlock = nextCurrentBlock;
     currentBlock.x = 100;
+    prevBlock = currentBlock.blocktag;
     pickBlock();
   }
   System.out.println(currentBlock.p1.y+" "+currentBlock.p2.y+" "+currentBlock.p3.y+" "+currentBlock.p4.y);
@@ -60,9 +66,16 @@ void displayAll(){
   }
 }
 
+int pickRand() {
+  blocktype = (int) random(7);
+  if (blocktype == prevBlock) {
+    pickRand();
+  }
+  return blocktype;
+}
+
 void pickBlock() {
-  int blocktype = (int) random(7);
-  
+  pickRand();
   switch (blocktype) {
     case 0:
       nextCurrentBlock = new iBlock();

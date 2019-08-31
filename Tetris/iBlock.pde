@@ -15,10 +15,13 @@ class iBlock extends Block {
     p2.c = #00e5e5;
     p3.c = #00e5e5;
     p4.c = #00e5e5;
+    this.blocktag = 0;
   }
   
   public void setRotation() {
-
+    if (rotation < 0) {
+      rotation = 1;
+    }
     switch(this.rotation % 2) {
       case 0:
         p1.x = this.x;
@@ -44,11 +47,7 @@ class iBlock extends Block {
   }
   
   public void update() {
-    if (rotation < 0) {
-      rotation = 1;
-    }
     setRotation();
-    
     this.display();
   }
   
