@@ -13,4 +13,13 @@ class Timer {
       f.run();
     }
   }
+  
+  public void waitInterval(int ms){
+     timestamp = millis();
+     while(true){
+       if(timestamp + ms <= millis()){
+          break; 
+       }
+     }
+  }
 }
