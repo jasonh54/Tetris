@@ -12,7 +12,7 @@ class Block {
   public Block(){
     this.x = 300;
     this.y = 100;
-    this.blocktag = 
+    this.blocktag = 7;
     this.rotation = 0;
     p1 = new Piece(x - 20, y);
     p2 = new Piece(x, y);
@@ -34,7 +34,6 @@ class Block {
     for(int i = 0; i < pieces.size() - 8; i++) {
       if((p1.y == pieces.get(i).y && p1.x == pieces.get(i).x) || (p2.y == pieces.get(i).y && p2.x == pieces.get(i).x) || 
       (p3.y == pieces.get(i).y && p3.x == pieces.get(i).x) || (p4.y == pieces.get(i).y && p4.x == pieces.get(i).x)){
-        print("rotated into a block");
         if (leftright == 1) {
           rotation--;
           setRotation();
@@ -71,11 +70,21 @@ class Block {
     
   }
   
+  public boolean checkEnd() {
+    for (int i = 0; i < pieces.size() - 8; i++) {
+      if (pieces.get(i).y < 150) {
+        return true;
+      }
+    }
+    return false;
+  }
+  
   public boolean checkCollisionDown(){
     //revertRotation();
     for(int i = 0; i < pieces.size() - 8; i++){
       if((p1.y + 20 == pieces.get(i).y && p1.x == pieces.get(i).x) || (p2.y + 20 == pieces.get(i).y && p2.x == pieces.get(i).x) || 
       (p3.y + 20 == pieces.get(i).y && p3.x == pieces.get(i).x) || (p4.y + 20 == pieces.get(i).y && p4.x == pieces.get(i).x)){
+        checkEnd();
         return true;
       } 
     }

@@ -33,13 +33,15 @@ void draw(){
     currentBlock = nextCurrentBlock;
     currentBlock.x = 100;
     prevBlock = currentBlock.blocktag;
+    if (currentBlock.checkEnd() == true) {
+      noLoop();
+    }
     pickBlock();
   }
-  System.out.println(currentBlock.p1.y+" "+currentBlock.p2.y+" "+currentBlock.p3.y+" "+currentBlock.p4.y);
   displayAll();
   
 }
-
+  
 void keyPressed() {
   if (key == 'a') {
     currentBlock.shiftLeft();
@@ -53,9 +55,6 @@ void keyPressed() {
   }
   if (key == 's'){
      currentBlock.y += 20; 
-  }
-  if (key == 'w'){
-
   }
   
 }
@@ -118,8 +117,6 @@ void clearLine(){
          count++;
        }
      }
-     
-     System.out.println(count);
      
      if(count == 10){
        clears++;
