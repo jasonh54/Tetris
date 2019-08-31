@@ -29,13 +29,12 @@ void draw(){
   }, 1000);
 
   if(currentBlock.checkCollisionDown()){
-    clearLine();
-    currentBlock = nextCurrentBlock;
-    currentBlock.x = 100;
-    prevBlock = currentBlock.blocktag;
-    pickBlock();
+      clearLine();
+      currentBlock = nextCurrentBlock;
+      currentBlock.x = 100;
+      prevBlock = currentBlock.blocktag;
+      pickBlock();
   }
-  System.out.println(currentBlock.p1.y+" "+currentBlock.p2.y+" "+currentBlock.p3.y+" "+currentBlock.p4.y);
   displayAll();
   
 }
@@ -53,9 +52,6 @@ void keyPressed() {
   }
   if (key == 's'){
      currentBlock.y += 20; 
-  }
-  if (key == 'w'){
-
   }
   
 }
@@ -107,11 +103,12 @@ void clearLine(){
   
      int yIncrement = 80;
      int count;
-     int clears = 0;
+     int tempcount;
      
   for(int i = 0; i < 20; i++){
      yIncrement += 20;
      count = 0;
+     tempcount = 0;
      
      for(int k = 0; k < pieces.size(); k++){
        if(pieces.get(k).y == yIncrement){
@@ -119,22 +116,30 @@ void clearLine(){
        }
      }
      
-     System.out.println(count);
-     
-     if(count == 10){
-       clears++;
+     if(count >= 10){
+        for(int k = 0; k < pieces.size(); k++){
+         if(pieces.get(k).y == yIncrement){
+           pieces.get(k).c = #ffffff;
+         }
+       }
         for(int k = 0; k < pieces.size(); k++){
          if(pieces.get(k).y == yIncrement){
            pieces.remove(k);
            k--;
          }
        }
+       for(int k = 0; k < pieces.size(); k++){
+         if(pieces.get(k).y < yIncrement){
+           pieces.get(k).y += 20;
+         }
+       }
+     
+     
      }
+     
      
   }
   
-  for(int i = 0; i < pieces.size(); i++){
-    pieces.get(i).y += (20 * clears);
-  }
+  
   
 }
