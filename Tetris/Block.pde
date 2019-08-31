@@ -127,7 +127,6 @@ class Block {
     p2.display();
     p3.display();
     p4.display();
-    
   }
   
   public void update() {

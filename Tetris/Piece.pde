@@ -3,7 +3,7 @@ class Piece {
   int x;
   int y;
   boolean falltag;
-  int c;
+  int c = #ff0000;
   
   //constructor
   public Piece(int x, int y) {

@@ -27,12 +27,15 @@ void draw(){
       currentBlock.fall();
     }
   }, 1000);
-  if (currentBlock.checkCollisionDown()) {
+
+  if(currentBlock.checkCollisionDown()){
+    clearLine();
     currentBlock = nextCurrentBlock;
     currentBlock.x = 100;
     prevBlock = currentBlock.blocktag;
     pickBlock();
   }
+  System.out.println(currentBlock.p1.y+" "+currentBlock.p2.y+" "+currentBlock.p3.y+" "+currentBlock.p4.y);
   displayAll();
   
 }
@@ -51,6 +54,10 @@ void keyPressed() {
   if (key == 's'){
      currentBlock.y += 20; 
   }
+  if (key == 'w'){
+
+  }
+  
 }
 
 void displayAll(){
@@ -94,4 +101,40 @@ void pickBlock() {
     default:
       print("error: blocktype picked number not tied to a block");
   }   
+}
+
+void clearLine(){
+  
+     int yIncrement = 80;
+     int count;
+     int clears = 0;
+     
+  for(int i = 0; i < 20; i++){
+     yIncrement += 20;
+     count = 0;
+     
+     for(int k = 0; k < pieces.size(); k++){
+       if(pieces.get(k).y == yIncrement){
+         count++;
+       }
+     }
+     
+     System.out.println(count);
+     
+     if(count == 10){
+       clears++;
+        for(int k = 0; k < pieces.size(); k++){
+         if(pieces.get(k).y == yIncrement){
+           pieces.remove(k);
+           k--;
+         }
+       }
+     }
+     
+  }
+  
+  for(int i = 0; i < pieces.size(); i++){
+    pieces.get(i).y += (20 * clears);
+  }
+  
 }

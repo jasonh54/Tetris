@@ -11,6 +11,10 @@ class oBlock extends Block {
     p3.y = this.y + 20;
     p4.x = this.x;
     p4.y = this.y + 20;
+    p1.c = #FFFF32;
+    p2.c = #FFFF32;
+    p3.c = #FFFF32;
+    p4.c = #FFFF32;
     this.blocktag = 3;
   }
   

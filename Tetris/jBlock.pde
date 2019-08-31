@@ -11,6 +11,10 @@ class jBlock extends Block {
     p3.y = this.y + 20;
     p4.x = this.x - 20;
     p4.y = this.y + 20;
+    p1.c = #0000ce;
+    p2.c = #0000ce;
+    p3.c = #0000ce;
+    p4.c = #0000ce;
     this.blocktag = 1;
   }
   

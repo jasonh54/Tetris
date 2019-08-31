@@ -11,6 +11,10 @@ class lBlock extends Block {
     p3.y = this.y - 20;
     p4.x = this.x;
     p4.y = this.y - 40;
+    p1.c = #FFAE19;
+    p2.c = #FFAE19;
+    p3.c = #FFAE19;
+    p4.c = #FFAE19;
     this.blocktag = 2;
   }
   
